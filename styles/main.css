@@ -53,6 +53,7 @@ h1 {
   justify-content: center;
   padding: 0.25rem;
   border-radius: 0.5rem;
+  margin: 0 20px;
 }
 @media screen and (min-width: 768px) {
   .hamburger {
@@ -73,12 +74,12 @@ h1 {
 @media screen and (min-width: 768px) {
   .nav {
     justify-content: flex-start;
-    margin: 0 calc(4% + 20px);
+    margin: 20px;
   }
 }
 @media screen and (min-width: 1024px) {
   .nav {
-    margin: 0 calc(2% + 20px);
+    margin: 20px;
   }
 }
 .nav__list {
@@ -90,6 +91,12 @@ h1 {
     width: 100%;
     padding: 0;
     list-style: none;
+    margin: 0 6.67%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .nav__list {
+    margin: 0 2.5%;
   }
 }
 .nav__item {
@@ -97,4 +104,5 @@ h1 {
 }
 .nav__item--order-now {
   margin-left: auto;
+  margin-right: 0;
 }/*# sourceMappingURL=main.css.map */

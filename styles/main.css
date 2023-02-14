@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -43,17 +47,35 @@ h1 {
     background-color: lightsalmon;
   }
 }
+.gallery__item--active {
+  border: 0.125rem solid black;
+  margin: calc(20px - 0.25rem) 0;
+}
+@media screen and (min-width: 768px) {
+  .gallery__item--active {
+    margin: calc(3vw - 0.25rem) 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gallery__item--active {
+    margin: calc(1.25vw - 0.25rem) 0;
+  }
+}
 
 .hamburger {
   width: 2.5rem;
-  height: 2.5rem;
+  height: 2.25rem;
   background-color: lightblue;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0.25rem;
   border-radius: 0.5rem;
-  margin: 0 20px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.hamburger--hide {
+  display: none;
 }
 @media screen and (min-width: 768px) {
   .hamburger {
@@ -63,13 +85,12 @@ h1 {
 .hamburger__line {
   height: 0.25rem;
   background-color: black;
-  margin: 0.25rem 0;
+  margin: 0.125rem 0;
   border-radius: 0.125rem;
 }
 
 .nav {
   display: flex;
-  justify-content: flex-end;
 }
 @media screen and (min-width: 768px) {
   .nav {
@@ -84,13 +105,20 @@ h1 {
 }
 .nav__list {
   display: none;
+  padding: 0;
+  list-style: none;
+}
+.nav__list--show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .nav__list {
     display: flex;
+    flex-direction: row;
     width: 100%;
-    padding: 0;
-    list-style: none;
     margin: 0 6.67%;
   }
 }
@@ -100,7 +128,30 @@ h1 {
   }
 }
 .nav__item {
-  margin-right: 1rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: lightsalmon;
+  border-bottom: 2px solid black;
+}
+.nav__item:first-child {
+  border-top: 2px solid black;
+}
+@media screen and (min-width: 768px) {
+  .nav__item:first-child {
+    border-top: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav__item {
+    border: 0;
+    background-color: initial;
+    padding: 0;
+    width: auto;
+    margin: 0;
+    margin-right: 1rem;
+    text-align: initial;
+  }
 }
 .nav__item--order-now {
   margin-left: auto;
